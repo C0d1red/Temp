@@ -4,7 +4,6 @@
 void main(void)
 {
     int temp, prov;
-    float f;
     char grad;
     prov = 0;
     printf("Example: 164C\n");
