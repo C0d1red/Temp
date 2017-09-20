@@ -1,30 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void main(void)
+int main(int argc, char* argv[])
 {
-    int temp, prov;
-    char grad;
-    prov = 0;
-    printf("Example: 164C\n");
-    scanf("%d%c", &temp, &grad);
-    printf("\n%s", "");
-    if (grad == 'K' || grad == 'C' || grad == 'F') {prov = 1;} else {prov = 2;}
-    if (prov==1) printf("%d%s%c%s\n", temp, " ", grad, ":");
-    if (prov==2) printf("%d\n\n", temp);
+    float temp = atof(argv[1]);
 
+    if (argc==2)
 
-    if (prov == 1){
-        if (grad == 'C') printf("%.2f%s\n%.2f%s\n", temp + 273.15, " K", temp * 1.8 + 32, " F");
-        if (grad == 'K') printf("%.2f%s\n%.2f%s\n", temp - 273.15, " C", (temp - 273.15) * 1.8 + 32, " F");
-        if (grad == 'F') printf("%.2f%s\n%.2f%s\n", (temp - 32)*0.55555555555, " C", 0.55555555555*(temp - 32) + 273.15, " K");
-    }
-    else
     {
-        if (prov == 2)
         printf("%s\n%.2f%s\n%.2f%s\n\n", "C:", temp + 273.15, " K", temp * 1.8 + 32, " F");
         printf("%s\n%.2f%s\n%.2f%s\n\n", "K:", temp - 273.15, " C", (temp - 273.15) * 1.8 + 32, " F");
-        printf("%s\n%.2f%s\n%.2f%s\n", "F:", (temp - 32)*0.55555555555, " C", 0.55555555555*(temp - 32) + 273.15, " K");
+        printf("%s\n%.2f%s\n%.2f%s\n", "F:", (temp - 32)*0.55555, " C", 0.55555*(temp - 32) + 273.15, " K");
+    }
+
+
+    if (argc==3)
+   {
+        if (strcmp(argv[2], "C")==0 || strcmp(argv[2], "c")==0) printf("%.2f%s\n%.2f%s\n", temp + 273.15, " K", temp * 1.8 + 32, " F");
+        if (strcmp(argv[2], "K")==0 || strcmp(argv[2], "k")==0) printf("%.2f%s\n%.2f%s\n", temp - 273.15, " C", (temp - 273.15) * 1.8 + 32, " F");
+        if (strcmp(argv[2], "F")==0 || strcmp(argv[2], "f")==0) printf("%.2f%s\n%.2f%s\n", (temp - 32)*0.5555555, " C", 0.5555*(temp - 32) + 273.15, " K");
     }
 
     }
