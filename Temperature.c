@@ -9,8 +9,17 @@ int main(int argc, char* argv[])
     if (argc==2)
 
     {
-        printf("%s\n%.2f%s\n%.2f%s\n\n", "C:", temp + 273.15, " K", temp * 1.8 + 32, " F");
+        if (temp<-273.15)
+            printf("C: Error, less than absolute zero\n\n");
+            else
+            printf("%s\n%.2f%s\n%.2f%s\n\n", "C:", temp + 273.15, " K", temp * 1.8 + 32, " F");
+        if (temp<0)
+            printf("K: Error, less than absolute zero\n\n");
+            else
         printf("%s\n%.2f%s\n%.2f%s\n\n", "K:", temp - 273.15, " C", (temp - 273.15) * 1.8 + 32, " F");
+        if (temp<-459.67)
+            printf("F: Error, less than absolute zero\n\n");
+            else
         printf("%s\n%.2f%s\n%.2f%s\n", "F:", (temp - 32)*0.55555555, " C", 0.555555555*(temp - 32) + 273.15, " K");
     }
 
