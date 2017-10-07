@@ -7,7 +7,7 @@ int main(int argc, char* argv[])
 
     float temp;
 
-    if (argc==1) printf("Error, enter temperature");
+    if (argc==1) printf("Error, enter temperature\n");
 
     if (argc==2)
 
