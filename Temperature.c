@@ -4,11 +4,15 @@
 
 int main(int argc, char* argv[])
 {
-    float temp = atof(argv[1]);
+
+    float temp;
+
+    if (argc==1) printf("C: Error, enter temperature");
 
     if (argc==2)
 
     {
+        temp = atof(argv[1]);
         if (temp<-273.15)
             printf("C: Error, less than absolute zero\n\n");
             else
@@ -26,6 +30,7 @@ int main(int argc, char* argv[])
 
     if (argc==3)
    {
+        temp = atof(argv[1]);
         if (strcmp(argv[2], "C")==0 || strcmp(argv[2], "c")==0)
         {
             if (temp<-273.15)
@@ -48,4 +53,6 @@ int main(int argc, char* argv[])
             printf("%.2f%s\n%.2f%s\n", (temp - 32)*0.5555555, " C", 0.55555555*(temp - 32) + 273.15, " K");
         }
     }
+
+    return 0;
     }
