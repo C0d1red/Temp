@@ -39,31 +39,33 @@ int main(int argc, char* argv[])
         if (temp == 0){
                 printf("Error, print like this:\n100 c or 100\n"); /* Pri vvode bukv vmesto chisel */
         }
-        else{
+        else {
+            if (strcmp(argv[2], "C")==0 || strcmp(argv[2], "c")==0 || strcmp(argv[2], "K")==0 || strcmp(argv[2], "k")==0 || strcmp(argv[2], "F")==0 || strcmp(argv[2], "f")==0){
         if (strcmp(argv[2], "C")==0 || strcmp(argv[2], "c")==0)
         {
             if (temp<-273.15)
-            printf("Error, less than absolute zero");
+                printf("Error, less than absolute zero");
             else
-            printf("%.2f%s\n%.2f%s\n", temp + 273.15, " K", temp * 1.8 + 32, " F");
+                printf("%.2f%s\n%.2f%s\n", temp + 273.15, " K", temp * 1.8 + 32, " F");
         }
         if (strcmp(argv[2], "K")==0 || strcmp(argv[2], "k")==0)
         {
             if (temp<0)
-            printf("Error, less than absolute zero");
+                printf("Error, less than absolute zero");
             else
-            printf("%.2f%s\n%.2f%s\n", temp - 273.15, " C", (temp - 273.15) * 1.8 + 32, " F");
+                printf("%.2f%s\n%.2f%s\n", temp - 273.15, " C", (temp - 273.15) * 1.8 + 32, " F");
         }
         if (strcmp(argv[2], "F")==0 || strcmp(argv[2], "f")==0)
         {
         if (temp<-459.67)
-            printf("Error, less than absolute zero");
+                printf("Error, less than absolute zero");
             else
-            printf("%.2f%s\n%.2f%s\n", (temp - 32)*0.5555555, " C", 0.55555555*(temp - 32) + 273.15, " K");
+                printf("%.2f%s\n%.2f%s\n", (temp - 32)*0.5555555, " C", 0.55555555*(temp - 32) + 273.15, " K");
         }
+        }
+            else printf("Error, unknown scale");
         }
     }
-
     if (argc>3) printf("Error, print like this:\n100 c\n"); /* Proverka na vvod */
 
 
