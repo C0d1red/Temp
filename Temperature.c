@@ -40,7 +40,7 @@ int main(int argc, char* argv[])
                 printf("Error, print like this:\n100 c or 100\n"); /* Pri vvode bukv vmesto chisel */
         }
         else {
-            if (strcmp(argv[2], "C")==0 || strcmp(argv[2], "c")==0 || strcmp(argv[2], "K")==0 || strcmp(argv[2], "k")==0 || strcmp(argv[2], "F")==0 || strcmp(argv[2], "f")==0){
+            if (strcmp(argv[2], "C")==0 || strcmp(argv[2], "c")==0 || strcmp(argv[2], "K")==0 || strcmp(argv[2], "k")==0 || strcmp(argv[2], "F")==0 || strcmp(argv[2], "f")==0){ /* Proverka na vvod pravilnoi shkali*/
         if (strcmp(argv[2], "C")==0 || strcmp(argv[2], "c")==0)
         {
             if (temp<-273.15)
@@ -63,7 +63,7 @@ int main(int argc, char* argv[])
                 printf("%.2f%s\n%.2f%s\n", (temp - 32)*0.5555555, " C", 0.55555555*(temp - 32) + 273.15, " K");
         }
         }
-            else printf("Error, unknown scale");
+            else printf("Error, unknown scale\n"); /* Pri nevernoi shkale */
         }
     }
     if (argc>3) printf("Error, print like this:\n100 c\n"); /* Proverka na vvod */
