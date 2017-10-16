@@ -7,14 +7,14 @@ int main(int argc, char* argv[])
 
     float temp;
 
-    if (argc==1) printf("Error, print temperature\n"); /* Proverka na vvod */
+    if (argc==1) printf("Error, print temperature\n"); /* Check print */
 
     if (argc==2)
 
     {
         temp = atof(argv[1]);
         if (temp == 0){
-                printf("Error, print like this:\n100 c or 100\n"); /* Pri vvode bukv vmesto chisel */
+                printf("Error, print like this:\n100 c or 100\n"); /* If characters were entered instead of numbers */
         }
         else{
         if (temp<-273.15)
@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
    {
         temp = atof(argv[1]);
         if (temp == 0){
-                printf("Error, print like this:\n100 c or 100\n"); /* Pri vvode bukv vmesto chisel */
+                printf("Error, print like this:\n100 c or 100\n"); /* If characters were entered instead of numbers */
         }
         else {
             if (strcmp(argv[2], "C")==0 || strcmp(argv[2], "c")==0 || strcmp(argv[2], "K")==0 || strcmp(argv[2], "k")==0 || strcmp(argv[2], "F")==0 || strcmp(argv[2], "f")==0){ /* Proverka na vvod pravilnoi shkali*/
@@ -63,10 +63,10 @@ int main(int argc, char* argv[])
                 printf("%.2f%s\n%.2f%s\n", (temp - 32)*0.5555555, " C", 0.55555555*(temp - 32) + 273.15, " K");
         }
         }
-            else printf("Error, unknown scale\n"); /* Pri nevernoi shkale */
+            else printf("Error, unknown scale\n"); /* If scale is wrong */
         }
     }
-    if (argc>3) printf("Error, print like this:\n100 c\n"); /* Proverka na vvod */
+    if (argc>3) printf("Error, print like this:\n100 c\n"); /* Check print */
 
 
     return 0;
