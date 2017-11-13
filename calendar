@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    int d, m, y, stol, year_stol, year_check, year_count, day_2;
+    double day;
+    printf("Print your date: (05 11 2014) \n");
+    scanf("%d %d %d", &d, &m, &y);
+
+
+    if(m == 1 || m == 2){
+        switch(m){
+        case 1:
+            m = 11;
+            break;
+        case 2:
+            m = 12;
+            break;
+        }
+    } else
+    m = m-2;
+
+    printf();
+
+    year_count = 0;
+    year_check = y;
+
+    while(year_check != 0){
+    year_check = year_check/10;
+    year_count++;
+    }
+
+
+
+
+    if (year_count==4) {
+        year_stol = y%100;
+        stol = y/100;
+    }
+
+
+
+    day = (d + floor((13*m-1)/5) + floor(5*year_stol/4) + floor((-7*stol)/4));
+    int day_1 = day;
+    day_2 = abs(day_1)%7;
+
+    if(day_2 == 0) printf("Sunday");
+    if(day_2 == 1) printf("Monday");
+    if(day_2 == 2) printf("Tuesday");
+    if(day_2 == 3) printf("Wednesday");
+    if(day_2 == 4) printf("Thursday");
+    if(day_2 == 5) printf("Friday");
+    if(day_2 == 6) printf("Saturday");
+
+
+
+    return 0;
+}
