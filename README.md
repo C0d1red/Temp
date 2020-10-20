@@ -1,2 +1,2 @@
-# Temp
+# TemperatureConverter
 Converting some temperatures
